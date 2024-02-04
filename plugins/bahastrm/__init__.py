@@ -58,7 +58,7 @@ class BahaStrm(_PluginBase):
     # 插件图标
     plugin_icon = "https://raw.githubusercontent.com/Akimio521/MoviePilot-Plugins/main/icons/bahastrm.png"
     # 插件版本
-    plugin_version = "2.2"
+    plugin_version = "2.3"
     # 插件作者
     plugin_author = "Akimio521"
     # 作者主页
@@ -138,7 +138,7 @@ class BahaStrm(_PluginBase):
         current_month = end_month
         
         while current_year > start_year or (current_year == start_year and current_month >= start_month):
-            season_list.append(get_ani_season(current_year, current_month))
+            season_list.append(self.get_ani_season(current_year, current_month))
             if current_month == 1:
                 current_month = 10
                 current_year -= 1
@@ -208,7 +208,7 @@ class BahaStrm(_PluginBase):
                     cnt += 1
         # 全量添加当季
         else:
-            season_list = get_season_list(2019, 1,2024, 1)
+            season_list = self.get_season_list(2019, 1,2024, 1)
             for season in season_list:
                 name_list = self.get_name_list(season)
                 logger.info(f'处理季度 {season} 的 {len(name_list)} 个文件')
