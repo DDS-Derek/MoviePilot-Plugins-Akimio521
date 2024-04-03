@@ -25,7 +25,7 @@ class AutoFilm(_PluginBase):
     # 插件图标
     plugin_icon = "https://raw.githubusercontent.com/thsrite/MoviePilot-Plugins/main/icons/create.png"
     # 插件版本
-    plugin_version = "0.3"
+    plugin_version = "0.4"
     # 插件作者
     plugin_author = "Akimio521"
     # 作者主页
@@ -61,7 +61,7 @@ class AutoFilm(_PluginBase):
             self._cron = config.get("cron")
             self._onlyonce = config.get("onlyonce")
             self._download_subtitle = config.get("download_subtitle")
-            self._autofilm_confs = config.get("autofilm_confs").dplit("\n")
+            self._autofilm_confs = config.get("autofilm_confs").split("\n")
 
         # 停止现有任务
         self.stop_service()
