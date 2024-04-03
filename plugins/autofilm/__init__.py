@@ -25,7 +25,7 @@ class AutoFilm(_PluginBase):
     # 插件图标
     plugin_icon = "https://raw.githubusercontent.com/thsrite/MoviePilot-Plugins/main/icons/create.png"
     # 插件版本
-    plugin_version = "0.4"
+    plugin_version = "0.5"
     # 插件作者
     plugin_author = "Akimio521"
     # 作者主页
@@ -123,7 +123,7 @@ class AutoFilm(_PluginBase):
             # 格式 Webdav服务器地址:账号:密码:本地目录
             if not autofilm_conf:
                 continue
-            if str(autofilm_conf).count("#") == 4:
+            if str(autofilm_conf).count("#") == 3:
                 webdav_url = str(autofilm_conf).split("#")[0]
                 webdav_account = str(autofilm_conf).split("#")[1]
                 webdav_password = str(autofilm_conf).split("#")[2]
