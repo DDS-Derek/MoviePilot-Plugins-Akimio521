@@ -25,7 +25,7 @@ class AutoFilm(_PluginBase):
     # 插件图标
     plugin_icon = "https://raw.githubusercontent.com/thsrite/MoviePilot-Plugins/main/icons/create.png"
     # 插件版本
-    plugin_version = "0.1"
+    plugin_version = "0.2"
     # 插件作者
     plugin_author = "Akimio521"
     # 作者主页
@@ -73,7 +73,7 @@ class AutoFilm(_PluginBase):
             # 运行一次定时服务
             if self._onlyonce:
                 logger.info("AutoFilm执行服务启动，立即运行一次")
-                self._scheduler.add_job(func=self.run, trigger='date',
+                self._scheduler.add_job(func=self.scan, trigger='date',
                                         run_date=datetime.now(tz=pytz.timezone(settings.TZ)) + timedelta(seconds=3),
                                         name="AutoFilm单次执行")
                 # 关闭一次性开关
